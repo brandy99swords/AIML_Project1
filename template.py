@@ -53,13 +53,3 @@ for filepath in list_files:
             pass
     else:
         print(f'File is already present at: {filepath}')    
-
-
-
-
-
-
-
-
-
-
