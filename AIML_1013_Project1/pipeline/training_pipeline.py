@@ -13,8 +13,8 @@ Run the Telco Churn machine-learning pipeline end-to-end:
 """
 
 import sys
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
 
 from AIML_1013_Project1.data_ingestion import DataIngestion
 from AIML_1013_Project1.components.data_validation import DataValidation

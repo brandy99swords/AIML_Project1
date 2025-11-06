@@ -24,8 +24,8 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler, OrdinalEncoder
 from sklearn.compose import ColumnTransformer
 
 from AIML_1013_Project1.constants import TARGET_COLUMN, SCHEMA_FILE_PATH
-from AIML_1013_Project1.config_entity import DataTransformationConfig
-from AIML_1013_Project1.artifact_entity import (
+from AIML_1013_Project1.entity.config_entity import DataTransformationConfig
+from AIML_1013_Project1.entity.artifact_entity import (
     DataIngestionArtifact,
     DataTransformationArtifact,
     DataValidationArtifact,
