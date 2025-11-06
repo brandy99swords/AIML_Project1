@@ -8,12 +8,12 @@ Purpose:
 """
 
 import sys
-from telco_churn.cloud_storage.aws_storage import SimpleStorageService
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
-from telco_churn.entity.artifact_entity import ModelPusherArtifact, ModelEvaluationArtifact
-from telco_churn.entity.config_entity import ModelPusherConfig
-from telco_churn.entity.s3_estimator import TelcoEstimator
+from AIML_1013_Project1.cloud_storage.aws_storage import SimpleStorageService
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
+from AIML_1013_Project1.entity.artifact_entity import ModelPusherArtifact, ModelEvaluationArtifact
+from AIML_1013_Project1.entity.config_entity import ModelPusherConfig
+from AIML_1013_Project1.entity.s3_estimator import project1Estimator
 
 
 class ModelPusher:
@@ -38,7 +38,7 @@ class ModelPusher:
         self.s3 = SimpleStorageService()
         self.model_evaluation_artifact = model_evaluation_artifact
         self.model_pusher_config = model_pusher_config
-        self.telco_estimator = TelcoEstimator(
+        self.telco_estimator = project1Estimator(
             bucket_name=model_pusher_config.bucket_name,
             model_path=model_pusher_config.s3_model_key_path
         )

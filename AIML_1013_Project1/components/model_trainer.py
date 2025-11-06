@@ -15,16 +15,16 @@ import numpy as np
 from sklearn.metrics import f1_score, precision_score, recall_score
 from neuro_mf import ModelFactory
 
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
-from telco_churn.utils.main_utils import load_numpy_array_data, load_object, save_object
-from telco_churn.entity.config_entity import ModelTrainerConfig
-from telco_churn.entity.artifact_entity import (
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
+from AIML_1013_Project1.utils import load_numpy_array_data, load_object, save_object
+from AIML_1013_Project1.entity.config_entity import ModelTrainerConfig
+from AIML_1013_Project1.entity.artifact_entity import (
     DataTransformationArtifact,
     ModelTrainerArtifact,
-    ClassificationMetricArtifact,
+    DataClassificationMetricArtifact,
 )
-from telco_churn.entity.estimator import TelcoModel
+from AIML_1013_Project1.entity.estimator import TelcoModel
 
 
 class ModelTrainer:
@@ -74,7 +74,7 @@ class ModelTrainer:
         Tuple[object, object]
             (best_model_detail, metric_artifact), where:
             - best_model_detail: object returned by neuro_mf containing `.best_model` and `.best_score`
-            - metric_artifact: ClassificationMetricArtifact with f1, precision, and recall
+            - metric_artifact: DataClassificationMetricArtifact with f1, precision, and recall
         """
         try:
             logging.info("Using neuro_mf to get best model object and report")
@@ -92,7 +92,7 @@ class ModelTrainer:
             f1 = f1_score(y_test, y_pred, pos_label=1)
             precision = precision_score(y_test, y_pred, pos_label=1)
             recall = recall_score(y_test, y_pred, pos_label=1)
-            metric_artifact = ClassificationMetricArtifact(
+            metric_artifact = DataClassificationMetricArtifact(
                 f1_score=f1, precision_score=precision, recall_score=recall
             )
             
@@ -135,13 +135,13 @@ class ModelTrainer:
                 raise Exception("No best model found with score more than base score")
 
             # Compose a deployable object that applies preprocessing prior to inference.
-            telco_model = TelcoModel(
+            project1_model = project1Model(
                 preprocessing_object=preprocessing_obj,
                 trained_model_object=best_model_detail.best_model
             )
             logging.info("Created telco model object with preprocessor and model")
             logging.info("Created best model file path.")
-            save_object(self.model_trainer_config.trained_model_file_path, telco_model)
+            save_object(self.model_trainer_config.trained_model_file_path, project1_model)
 
             # Package outputs into an artifact for downstream stages.
             model_trainer_artifact = ModelTrainerArtifact(

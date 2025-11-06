@@ -6,8 +6,8 @@ import yaml  # Used to read and write settings files
 from pandas import DataFrame  # Used to label a table of data in function inputs
 
 # Custom code for logging and error messages
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
 
 ########################################################################################
 

@@ -16,14 +16,14 @@ import sys
 from telco_churn.exceptions import custom_exception
 from telco_churn.logger import logging
 
-from telco_churn.components.data_ingestion import DataIngestion
-from telco_churn.components.data_validation import DataValidation
-from telco_churn.components.data_transformation import DataTransformation
-from telco_churn.components.model_trainer import ModelTrainer
-from telco_churn.components.model_evaluation import ModelEvaluation
-from telco_churn.components.model_pusher import ModelPusher
+from AIML_1013_Project1.data_ingestion import DataIngestion
+from AIML_1013_Project1.components.data_validation import DataValidation
+from AIML_1013_Project1.components.data_transformation import DataTransformation
+from AIML_1013_Project1.components.model_trainer import ModelTrainer
+from AIML_1013_Project1.components.model_evaluation import ModelEvaluation
+from AIML_1013_Project1.components.model_pusher import ModelPusher
 
-from telco_churn.entity.config_entity import (
+from AIML_1013_Project1.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
@@ -32,7 +32,7 @@ from telco_churn.entity.config_entity import (
     ModelPusherConfig,
 )
 
-from telco_churn.entity.artifact_entity import (
+from AIML_1013_Project1.entity.artifact_entity import (
     DataIngestionArtifact,
     DataValidationArtifact,
     DataTransformationArtifact,

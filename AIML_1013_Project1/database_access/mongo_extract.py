@@ -1,14 +1,14 @@
-from telco_churn.configuration.mongo_db_connect import MongoDBClient
-from telco_churn.constants import DATABASE_NAME
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
+from AIML_1013_Project1.configuration.mongo_db_connect import MongoDBClient
+from AIML_1013_Project1.constants import DATABASE_NAME
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
 
 import pandas as pd
 import sys 
 from typing import Optional 
 import numpy as np
 
-class TelcoData:
+class project1Data:
     """
     Class Name: TelcoData
     Description: This class is responsible for extracting data from MongoDB and converting it into a DataFrame.

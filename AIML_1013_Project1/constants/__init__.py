@@ -1,14 +1,14 @@
 import os 
 from datetime import date 
 
-DATABASE_NAME = "TELCO_CHURN"
+DATABASE_NAME = "PROJECT1_CHURN"
 
-COLLECTION_NAME = "telco_data"
+COLLECTION_NAME = "project1_data"
 
 MONGODBURL = "MONGODB_URL"
 
 
-PIPELINE_NAME:str = "telco_churn_pipeline"
+PIPELINE_NAME:str = "project1_churn_pipeline"
 ARTIFACT_DIR: str = "artifacts"    
 
 MODEL_FILE_NAME = "model.pkl"
@@ -16,7 +16,7 @@ MODEL_FILE_NAME = "model.pkl"
 TARGET_COLUMN = "Churn"
 PREPOCESSING_OBJECT_FILE_NAME = "preprocessor.pkl"
 
-FILE_NAME: str = "telco_churn.csv"
+FILE_NAME: str = "project1_churn.csv"
 TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
@@ -29,7 +29,7 @@ REGION_NAME = "us-east-1"
 """
 Data Ingestion related constants with DATA_INGESTION VAR NAME
 """
-DATA_INGESTION_COLLECTION_NAME: str = "telco_data"
+DATA_INGESTION_COLLECTION_NAME: str = "project1_data"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion"
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store"
 DATA_INGESTION_INGESTED_DIR: str = "ingested"

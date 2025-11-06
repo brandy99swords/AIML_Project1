@@ -14,13 +14,13 @@ Notes:
 
 import sys
 from pandas import DataFrame
-from telco_churn.entity.config_entity import TelcoPredictorConfig
-from telco_churn.entity.s3_estimator import TelcoEstimator
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
+from AIML_1013_Project1.entity.config_entity import project1PredictorConfig
+from AIML_1013_Project1.entity.s3_estimator import project1Estimator
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
 
 
-class TelcoData:
+class project1Data:
     def __init__(self,
                  SeniorCitizen: int,
                  Dependents: str,
@@ -87,7 +87,7 @@ class TelcoData:
         except Exception as e:
             raise custom_exception(e, sys) from e
 
-    def get_telco_input_data_frame(self) -> DataFrame:
+    def get_project1_input_data_frame(self) -> DataFrame:
         """
         Convert TelcoData instance into a pandas DataFrame.
 
@@ -97,12 +97,12 @@ class TelcoData:
             A single-row DataFrame with column names matching model input schema.
         """
         try:
-            telco_input_dict = self.get_telco_data_as_dict()
-            return DataFrame(telco_input_dict)
+            project1_input_dict = self.get_project1_data_as_dict()
+            return DataFrame(project1_input_dict)
         except Exception as e:
             raise custom_exception(e, sys) from e
 
-    def get_telco_data_as_dict(self) -> dict:
+    def get_project1_data_as_dict(self) -> dict:
         """
         Convert the TelcoData instance to a dictionary.
 
@@ -135,8 +135,8 @@ class TelcoData:
             raise custom_exception(e, sys) from e
 
 
-class TelcoClassifier:
-    def __init__(self, prediction_pipeline_config: TelcoPredictorConfig = None) -> None:
+class project1Classifier:
+    def __init__(self, prediction_pipeline_config: project1PredictorConfig = None) -> None:
         """
         Initialize the TelcoClassifier used for churn prediction.
 
@@ -148,7 +148,7 @@ class TelcoClassifier:
         """
         try:
             if prediction_pipeline_config is None:
-                prediction_pipeline_config = TelcoPredictorConfig()
+                prediction_pipeline_config = project1PredictorConfig()
             self.prediction_pipeline_config = prediction_pipeline_config
         except Exception as e:
             raise custom_exception(e, sys) from e
@@ -174,7 +174,7 @@ class TelcoClassifier:
         """
         try:
             logging.info("Entered predict method of TelcoClassifier class.")
-            model = TelcoEstimator(
+            model = project1EstimatorEstimator(
                 bucket_name=self.prediction_pipeline_config.model_bucket_name,
                 model_path=self.prediction_pipeline_config.model_file_path,
             )

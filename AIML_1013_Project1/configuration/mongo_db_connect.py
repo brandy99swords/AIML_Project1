@@ -2,10 +2,10 @@ import sys
 import os 
 import pymongo
 
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
 
-from telco_churn.constants import DATABASE_NAME, MONGODBURL
+from AIML_1013_Project1.constants import DATABASE_NAME, MONGODBURL
 
 class MongoDBClient:
     """

@@ -9,19 +9,19 @@ Purpose:
 
 """
 
-from telco_churn.entity.config_entity import ModelEvaluationConfig
-from telco_churn.entity.artifact_entity import ModelTrainerArtifact, DataIngestionArtifact, ModelEvaluationArtifact
+from AIML_1013_Project1.entity.config_entity import ModelEvaluationConfig
+from AIML_1013_Project1.entity.artifact_entity import ModelTrainerArtifact, DataIngestionArtifact, ModelEvaluationArtifact
 from sklearn.metrics import f1_score
-from telco_churn.exceptions import custom_exception
-from telco_churn.constants import TARGET_COLUMN
-from telco_churn.logger import logging
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.constants import TARGET_COLUMN
+from AIML_1013_Project1.logger import logging
 import sys
 import pandas as pd
 from typing import Optional
-from telco_churn.entity.s3_estimator import TelcoEstimator
+from AIML_1013_Project1.entity.s3_estimator import project1Estimator
 from dataclasses import dataclass
-from telco_churn.entity.estimator import TelcoModel
-from telco_churn.entity.estimator import TargetValueMapping
+from AIML_1013_Project1.entity.estimator import project1ModelModel
+from AIML_1013_Project1.entity.estimator import TargetValueMapping
 
 
 @dataclass
@@ -74,7 +74,7 @@ class ModelEvaluation:
         except Exception as e:
             raise custom_exception(e, sys) from e
 
-    def get_best_model(self) -> Optional[TelcoEstimator]:
+    def get_best_model(self) -> Optional[project1Estimator]:
         """
         Retrieve a handle to the current production model stored in S3, if present.
 
@@ -91,11 +91,11 @@ class ModelEvaluation:
         try:
             bucket_name = self.model_eval_config.bucket_name          # S3 bucket containing the model artifact(s).
             model_path = self.model_eval_config.s3_model_key_path     # S3 key/path to the production model.
-            telco_estimator = TelcoEstimator(bucket_name=bucket_name,
+            project1_estimator = project1Estimator(bucket_name=bucket_name,
                                              model_path=model_path)   # Initialize estimator wrapper for S3 model.
 
-            if telco_estimator.is_model_present(model_path=model_path):  # Check model presence at specified path.
-                return telco_estimator
+            if project1_estimator.is_model_present(model_path=model_path):  # Check model presence at specified path.
+                return project1_estimator
             return None                                                 # No production model available.
         except Exception as e:
             raise custom_exception(e, sys)

@@ -23,23 +23,23 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler, OrdinalEncoder
 from sklearn.compose import ColumnTransformer
 
-from telco_churn.constants import TARGET_COLUMN, SCHEMA_FILE_PATH
-from telco_churn.entity.config_entity import DataTransformationConfig
-from telco_churn.entity.artifact_entity import (
+from AIML_1013_Project1.constants import TARGET_COLUMN, SCHEMA_FILE_PATH
+from AIML_1013_Project1.config_entity import DataTransformationConfig
+from AIML_1013_Project1.artifact_entity import (
     DataIngestionArtifact,
     DataTransformationArtifact,
     DataValidationArtifact,
 )
 
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
-from telco_churn.utils import (
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
+from AIML_1013_Project1.utils import (
     save_object,
     save_numpy_array_data,
     read_yaml_file,
     drop_columns,
 )
-from telco_churn.entity.estimator import TargetValueMapping
+from AIML_1013_Project1.entity.estimator import TargetValueMapping
 
 
 class DataTransformation:

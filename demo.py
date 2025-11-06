@@ -1,0 +1,5 @@
+from AIML_1013_Project1.pipeline.training_pipeline import TrainPipeline
+
+pipeline = TrainPipeline()
+
+pipeline.run_pipeline()

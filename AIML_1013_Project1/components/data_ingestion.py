@@ -3,12 +3,12 @@ import sys
 import pandas as pd 
 from pandas import DataFrame
 from sklearn.model_selection import train_test_split
-from telco_churn.entity.config_entity import DataIngestionConfig
-from telco_churn.entity.articfact_entity import DataIngetstionArtifact
+from AIML_1013_Project1.entity.config_entity import DataIngestionConfig
+from AIML_1013_Project1.entity.artifact_entity import DataIngestionArtifact
 
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
-from telco_churn.database_access.mongo_extract import TelcoData
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
+from AIML_1013_Project1.database_access.mongo_extract import TelcoData
 
 
 class DataIngestion:
@@ -32,8 +32,8 @@ class DataIngestion:
         """
         try: 
             logging.info(f"Exporting data from mongodb")
-            telco_data = TelcoData()
-            dataframe = telco_data.export_collection_as_dataframe(collection_name=self.data_ingestion_config.collection_name)
+            project1_data = TelcoData()
+            dataframe = project1_data.export_collection_as_dataframe(collection_name=self.data_ingestion_config.collection_name)
             logging.info(f"Shape of the dataframe: {dataframe.shape}")
             feature_store_file_path = self.data_ingestion_config.feature_store_file_path
             dir_path = os.path.dirname(feature_store_file_path)
@@ -76,7 +76,7 @@ class DataIngestion:
             raise custom_exception(e, sys) from e
         
 
-    def initiate_data_ingestion(self) -> DataIngetstionArtifact:
+    def initiate_data_ingestion(self) -> DataIngestionArtifact:
         """
         Method Name: initiate_data_ingestion
         Description: This method intiates the data ingestion components of training pipeline
@@ -98,7 +98,7 @@ class DataIngestion:
 
             logging.info("Exited initiate_data_ingestion method")
 
-            data_ingestion_artifact = DataIngetstionArtifact(
+            data_ingestion_artifact = DataIngestionArtifact(
                 trained_file_path=self.data_ingestion_config.training_file_path,
                 test_file_path=self.data_ingestion_config.testing_file_path
             )

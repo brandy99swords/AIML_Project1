@@ -3,8 +3,8 @@ import sys
 from pandas import DataFrame
 from sklearn.pipeline import Pipeline
 
-from telco_churn.exceptions import custom_exception
-from telco_churn.logger import logging
+from AIML_1013_Project1.exceptions import custom_exception
+from AIML_1013_Project1.logger import logging
 
 class TargetValueMapping:
     def __init__(self):
@@ -20,7 +20,7 @@ class TargetValueMapping:
 
 
 
-class TelcoModel:
+class project1Model:
     def __init__(self, preprocessing_object: Pipeline, trained_model_object: object):
         """
         :param preprocessing_object: Input Object of preprocesser
