@@ -1,7 +1,7 @@
 # To test, open the terminal and use `python app.py`. Once it is running
 # paste http://127.0.0.1:8080/ into your browser
 
-
+import fastapi
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,8 +14,8 @@ from uvicorn import run as app_run
 from typing import Optional
 
 from AIML_1013_Project1.constants import APP_HOST, APP_PORT
-from AIML_1013_Project1.pipeline.prediction_pipeline import TelcoData, TelcoClassifier
-from AIML_1013_Project1.pipeline.traning_pipeline import TrainPipeline
+from AIML_1013_Project1.pipeline.prediction_pipeline import project1Data, project1Classifier
+from AIML_1013_Project1.pipeline.training_pipeline import TrainPipeline
 
 app = FastAPI()
 
@@ -94,7 +94,7 @@ async def predictRouteClient(request: Request):
         form = DataForm(request)
         await form.get_telco_data()
         
-        project1_data = Project1Data(
+        project1_data = project1Data(
             SeniorCitizen=form.SeniorCitizen,
             Dependents=form.Dependents,
             tenure=form.tenure,

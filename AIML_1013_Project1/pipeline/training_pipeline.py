@@ -16,7 +16,7 @@ import sys
 from AIML_1013_Project1.exceptions import custom_exception
 from AIML_1013_Project1.logger import logging
 
-from AIML_1013_Project1.data_ingestion import DataIngestion
+from AIML_1013_Project1.components.data_ingestion import DataIngestion
 from AIML_1013_Project1.components.data_validation import DataValidation
 from AIML_1013_Project1.components.data_transformation import DataTransformation
 from AIML_1013_Project1.components.model_trainer import ModelTrainer
