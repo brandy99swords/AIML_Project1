@@ -8,13 +8,7 @@ from AIML_1013_Project1.logger import logging
 from AIML_1013_Project1.constants import DATABASE_NAME, MONGODBURL
 
 class MongoDBClient:
-    """
-    Class Name: MondoDBClient
-    Description: This class is responsible for creating a MongoDB client and connecting to the database
 
-    Output: Connection to the MongoDB database
-    On Fialure: Raises Exception with a custom error message
-    """
     client = None
 
     def __init__(self, database_name: str = DATABASE_NAME) -> None:

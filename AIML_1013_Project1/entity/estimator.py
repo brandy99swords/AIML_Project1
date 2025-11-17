@@ -17,9 +17,6 @@ class TargetValueMapping:
         return dict(zip(mapping_response.values(),mapping_response.keys()))
     
 
-
-
-
 class project1Model:
     def __init__(self, preprocessing_object: Pipeline, trained_model_object: object):
         """

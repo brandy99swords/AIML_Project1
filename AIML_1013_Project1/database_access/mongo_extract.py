@@ -9,18 +9,9 @@ from typing import Optional
 import numpy as np
 
 class project1Data:
-    """
-    Class Name: TelcoData
-    Description: This class is responsible for extracting data from MongoDB and converting it into a DataFrame.
-    
-    Output: DataFrame containing the data from the MongoDB collection
-    On Failure: Raises Exception with a custom error message
-    """
 
     def __init__(self):
-        """
-        Initialize the MongoDB client and set the db names.
-        """
+
         try:
             self.mongo_client = MongoDBClient(database_name=DATABASE_NAME)
             logging.info("MongoDB client initialized successfully.")
@@ -28,16 +19,7 @@ class project1Data:
             raise custom_exception(e, sys)
     
     def export_collection_as_dataframe(self, collection_name: str, database_name: Optional[str]) -> pd.DataFrame:
-        """
-        Extract data from MongoDB collection and convert it into a DataFrame.
-        
-        Args:
-            collection_name (str): The name of the MongoDB collection to extract data from.
-            database_name (Optional[str]): The name of the MongoDB database. If None, use the default database.
-        
-        Returns:
-            pd.DataFrame: A DataFrame containing the extracted data.
-        """
+
         try:
             logging.info(f'Exporting data from collection: {collection_name}')
 

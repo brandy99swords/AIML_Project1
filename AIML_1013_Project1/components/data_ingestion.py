@@ -8,7 +8,7 @@ from AIML_1013_Project1.entity.artifact_entity import DataIngestionArtifact
 
 from AIML_1013_Project1.exceptions import custom_exception
 from AIML_1013_Project1.logger import logging
-from AIML_1013_Project1.database_access.mongo_extract import TelcoData
+from AIML_1013_Project1.database_access.mongo_extract import project1Data
 
 
 class DataIngestion:

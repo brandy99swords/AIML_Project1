@@ -20,7 +20,7 @@ import pandas as pd
 from typing import Optional
 from AIML_1013_Project1.entity.s3_estimator import project1Estimator
 from dataclasses import dataclass
-from AIML_1013_Project1.entity.estimator import project1ModelModel
+from AIML_1013_Project1.entity.estimator import project1Model
 from AIML_1013_Project1.entity.estimator import TargetValueMapping
 
 

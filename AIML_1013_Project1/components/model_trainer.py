@@ -24,7 +24,7 @@ from AIML_1013_Project1.entity.artifact_entity import (
     ModelTrainerArtifact,
     DataClassificationMetricArtifact,
 )
-from AIML_1013_Project1.entity.estimator import TelcoModel
+from AIML_1013_Project1.entity.estimator import project1Model
 
 
 class ModelTrainer:
