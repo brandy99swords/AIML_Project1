@@ -211,3 +211,6 @@ WA_Fn-UseC_-Telco-Customer-Churn.csv
 EDA.ipynb
 Hyperparameter_Tuning.ipynb
 mongoDB.ipynb
+
+# ignore local scanner utility
+scan_entities.py

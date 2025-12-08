@@ -316,7 +316,7 @@ class DataTransformation:
                     self.data_transformation_config.transformed_object_file_path, preprocessor
                 )
                 save_numpy_array_data(
-                    self.data_transformation_config.transformed_train_file_path, array=train_arr
+                    self.data_transformation_config.transformed_trained_file_path, array=train_arr
                 )
                 save_numpy_array_data(
                     self.data_transformation_config.transformed_test_file_path, array=test_arr
@@ -330,7 +330,7 @@ class DataTransformation:
                 # Package artifact with references to saved file paths.
                 data_transformation_artifact = DataTransformationArtifact(
                     transformed_object_file_path=self.data_transformation_config.transformed_object_file_path,
-                    transformed_train_file_path=self.data_transformation_config.transformed_train_file_path,
+                    transformed_trained_file_path=self.data_transformation_config.transformed_trained_file_path,
                     transformed_test_file_path=self.data_transformation_config.transformed_test_file_path,
                 )
                 return data_transformation_artifact
