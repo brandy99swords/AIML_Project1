@@ -63,9 +63,9 @@ class project1Data:
             Monthly and total charges for the customer.
         """
         try:
-            self.SeniorCitizen = SeniorCitizen
+            self.SeniorCitizen = int(SeniorCitizen)
             self.Dependents = Dependents
-            self.tenure = tenure
+            self.tenure = float(tenure)
             self.MultipleLines = MultipleLines
             self.InternetService = InternetService
             self.OnlineSecurity = OnlineSecurity
@@ -75,8 +75,8 @@ class project1Data:
             self.Contract = Contract
             self.PaperlessBilling = PaperlessBilling
             self.PaymentMethod = PaymentMethod
-            self.MonthlyCharges = MonthlyCharges
-            self.TotalCharges = TotalCharges
+            self.MonthlyCharges = float(MonthlyCharges)
+            self.TotalCharges = float(TotalCharges)
 
             # Basic numeric validation
             for attr_name in ["tenure", "MonthlyCharges", "TotalCharges"]:
@@ -174,7 +174,7 @@ class project1Classifier:
         """
         try:
             logging.info("Entered predict method of TelcoClassifier class.")
-            model = project1EstimatorEstimator(
+            model = project1Estimator(
                 bucket_name=self.prediction_pipeline_config.model_bucket_name,
                 model_path=self.prediction_pipeline_config.model_file_path,
             )
