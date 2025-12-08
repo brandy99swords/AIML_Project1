@@ -135,3 +135,5 @@ async def predictRouteClient(request: Request):
 
 if __name__ == "__main__":
     app_run(app, host=APP_HOST, port=APP_PORT)
+
+    #activation
